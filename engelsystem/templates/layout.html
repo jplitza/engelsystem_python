@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head %}
+        <title>{% block title %}{% endblock %} - Engelsystem</title>
+        <meta charset="UTF-8" />
+        <script type="text/javascript" src="{{ url_for('static', filename='js/grossbild.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/forms.js') }}"></script>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base.css') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style11.css') }}" />
+        {% endblock %}
+    </head>
+    <body class="background">
+        <header>
+            <a href="{{ url_for('index') }}" id="logo"></a>
+        </header>
+        <div id="body">
+            <div id="menu">
+                <nav class="container">
+                    <ul>
+                        <li><a href="{{ url_for('index') }}">{{_('Shifts')}}</a></li>
+                    </ul>
+                </nav>
+                <nav class="container small">
+                    <ul>
+                        <li><a href="mailto:erzengel@lists.ccc.de">{{_('Contact')}} <img src="{{ url_for('static', filename='images/icons/email.png') }}" alt="{{_('e-mail')}}"></a></li>
+                        <li><a href="mailto:bugs@engelsystem.de">{{_('Bugs / Features')}} <img src="{{ url_for('static', filename='images/icons/email.png') }}" alt="{{_('e-mail')}}"></a></li>
+                        <li><a href="https://vcs.wybt.net/engelsystem/trac/">{{_('Development Platform')}}</a></li>
+                        <li><a href="?p=credits">{{_('Credits')}}</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div id="content" class="container">
+                {% block content %}{% endblock %}
+            </div>
+            <div class="clear"></div>
+        </div>
+    </body>
+</html>
+

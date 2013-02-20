@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block title %}Profile of {{ user['username'] }}{% endblock %}
+{% block content %}
+<h1>Profile of {{ user['username'] }}</h1>
+<table>
+    <tr>
+        <th>Username</th>
+        <td>{{ user['username'] }}</td>
+    </tr>
+    <tr>
+        <th>Realname</th>
+        <td>{{ user['realname'] }}</td>
+    </tr>
+</table>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block title %}Shifts{% endblock %}
+{% block content %}
+<h1>{{_('Shifts')}}</h1>
+<ul>
+{% for room in rooms %}
+    <li>{{ room.name }}
+        <ul>
+        {% for shift in room.shifts %}
+            <li>{{ shift.title }}
+                <ul>
+                {% for task in shift.task_allocations %}
+                    <li title="{{ task.texts['de'].description }}">{{ task.texts['de'].name }} ({{ task.amount }})</li>
+                {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+        </ul>
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}
